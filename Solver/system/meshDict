@@ -1,0 +1,80 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                |
+| \\      /  F ield         | cfMesh: A library for mesh generation          |
+|  \\    /   O peration     |                                                |
+|   \\  /    A nd           | Author: Franjo Juretic                         |
+|    \\/     M anipulation  | E-mail: franjo.juretic@c-fields.com            |
+\*---------------------------------------------------------------------------*/
+
+FoamFile
+{
+    version   2.0;
+    format    ascii;
+    class     dictionary;
+    location  "system";
+    object    meshDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+surfaceFile "domain.stl"
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+minCellSize         0.05;  // =================
+
+maxCellSize         0.30; // =================
+
+boundaryCellSize    0.30; // =================
+
+
+objectRefinements
+{
+	RotorBox
+	{
+		type	box;
+		cellSize	                0.06;  // =================
+		centre	(10.20 0.75 10);
+		lengthX	1.00;
+		lengthY	1.50;
+		lengthZ	1.50;
+	}
+
+	NearWakeBox
+	{
+		type	box;
+		cellSize	                0.12;  // =================
+		centre	(12.00 1.00 10);
+		lengthX	6.00;
+		lengthY	2.00;
+		lengthZ	2.00;
+	}
+
+	WakeBox
+	{
+		type	box;
+		cellSize	                0.18;   // =================
+		centre	(24.00 1.50 10);
+		lengthX	32.00;
+		lengthY	3.00;
+		lengthZ	2.50;
+	}
+}
+
+
+renameBoundary
+{
+    defaultType     patch;
+
+    newPatchNames
+    {
+        "top"    { newName top    ; type  patch; }
+        "sides"  { newName sides  ; type  patch; }
+        "outlet" { newName outlet ; type  patch; }
+        "inlet"  { newName inlet  ; type  patch; }
+        "ground" { newName ground ; type  wall;  inGroups 1(wall); }
+        
+    }
+}
+
+// ************************************************************************* //

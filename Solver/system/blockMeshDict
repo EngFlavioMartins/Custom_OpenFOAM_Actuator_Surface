@@ -1,0 +1,84 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  10
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version         2.0;
+    format          ascii;
+    class           dictionary;
+    object          blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+convertToMeters 1; // multiply all sizes below by 100
+
+vertices
+(
+    (0   0   0)
+    (40  0   0)
+    (40  10  0)
+    (0   10  0)
+    (0   0   20)
+    (40  0   20)
+    (40  10  20)
+    (0   10  20)
+
+);
+
+blocks
+(
+    hex (0 1 2 3 4 5 6 7) (40 10 20) simpleGrading (1 1 1)
+);
+
+boundary
+(
+    outlet
+    {
+        type patch;
+        faces
+        (
+            (2 1 5 6)
+        );
+    }
+    sides
+    {
+        type patch;
+        faces
+        (
+            (0 1 2 3)
+            (4 7 6 5)
+        );
+    }
+    inlet
+    {
+        type patch;
+        faces
+        (
+            (0 3 7 4)
+        );
+    }
+    ground
+    {
+        type wall;
+        faces
+        (
+            (0 4 5 1)
+        );
+    }
+    top
+    {
+        type patch;
+        faces
+        (
+            (3 2 6 7)
+        );
+    }
+);
+
+
+
+// ************************************************************************* //

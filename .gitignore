@@ -1,0 +1,12 @@
+### Skip OpenFOAM files ###
+
+# Ignore OpenFOAM results and other heavy files:
+./Results/
+./Solver/processor*
+./Solver/0.*
+./Solver/[0-9]*
+./Solver/constant/polyMesh/*
+./Solver/constant/processor*
+./Solver/log.*
+./Solver/*log
+./Solver/*.foam

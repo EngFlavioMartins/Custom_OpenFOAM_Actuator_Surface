@@ -1,0 +1,105 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  8
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      topoSetDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+actions
+(
+    {
+        name    actuationDiskCellSet;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (9.98  0.25  9.5) (10.02  1.25  10.5);
+        }
+    }
+    {
+        name    Rotor;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set actuationDiskCellSet;
+        }
+    }
+
+    // ======================= BLADES
+
+    {
+        name    bladeDiskCellSet; // Blade at 4/4 of the height
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {   
+               box (9.98  1.25  9.5) (10.04  1.30  10.5);
+        }
+    }
+
+    
+    /*{
+        name    bladeDiskCellSet; // Blade at 3/4 of the height
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {   
+               box (9.98  1.0  9.5) (10.04  1.05  10.5);
+        }
+    }*/
+    
+
+    {
+        name    bladeDiskCellSet; // Blade at 2/4 of the height
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {   
+               box (9.98  0.75  9.5) (10.04  0.80  10.5);
+        }
+    }
+    
+    
+    /*{
+        name    bladeDiskCellSet; // Blade at 1/4 of the height
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {   
+               box (9.98  0.50  9.5) (10.04  0.55  10.5);
+        }
+    }*/
+
+
+    {
+        name    Blade;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set bladeDiskCellSet;
+        }
+    }
+
+);
+
+// ************************************************************************* //
+

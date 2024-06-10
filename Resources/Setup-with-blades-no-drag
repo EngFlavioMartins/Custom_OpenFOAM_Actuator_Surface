@@ -1,0 +1,13 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  9
+     \\/     M anipulation  | Written by Flavio A. C. Martins (2023)
+\*---------------------------------------------------------------------------*/
+
+const vector RotorForce = vector(-5.76, 0.00, 0.0);	// N
+const vector BladeForce = vector( 0.00, 7.07, 0.0);	// N
+
+
+// ************************************************************************* //
