@@ -1,4 +1,4 @@
-# Custom OpenFOAM disk actuator
+# Custom OpenFOAM Actuator Surface
 
 <p align="center">
 <img src="Resources/Render.png"  width="600px">
@@ -6,10 +6,9 @@
 
 ## Description
 
-This project features a custom implementation of an actuator-surface model in OpenFOAM (v9) that eliminates the need for compiling additional files.
+This project features a custom implementation of an actuator-surface model in OpenFOAM (v9) thorugh fvOptions that eliminates the need for compiling additional files.
 
 1. You can easily define the dimensions of the actuator surfaces using the standard `./Solver/system/topoSetDict` dictionary in OpenFOAM. 
-
 
 2. The input parameters are:
 
@@ -60,14 +59,11 @@ Delft, The Netherlands
 </a>
 
 
-
-
 ## Requirements  
 
+* This project only requires the installation of [OpenFOAM v9](https://github.com/OpenFOAM/OpenFOAM-9)
 
-* This project only requires the installation of OpenFOAM v9 
-
-* In addition, the user can also post-process their data using the included Jupyter notebook by installing Anaconda.
+* In addition, the user can also post-process their data using the included Jupyter notebook by installing [Miniconda](https://docs.anaconda.com/free/miniconda/).
 
 
 <!--- Provide details of the software required   
@@ -85,11 +81,11 @@ Delft, The Netherlands
     * Provide any further instructions on how others can make sure the scripts are running for benchmarking examples (e.g. by using computational notebooks such as Jupyter notebooks) 
 -->
 
-# How to run: 
+## How to run: 
 
 You can easily run this custom OpenFOAM disk actuator model on your local machine or on TU Delft's DelftBlue supercomputer. The momentum source representing the actuator surfaces is auto-compiled during execution, so no extra setup is needed. Below, you'll find instructions on how to run the simulations.
 
-## From your local machine
+### From your local machine
 
 Simply execute:
 
@@ -97,13 +93,13 @@ Simply execute:
 run-all-cases.sh 
 ~~~
 
-to have all test cases run in sequence, or:
+to have all test cases run in sequence (batch run), or:
 
 ~~~ 
 ./Solver/Allrun.sh
 ~~~ 
 
-to run one single simulation.
+to run one test case.
 
 
 ## From TU Delft's DelftBlue computer
@@ -112,30 +108,30 @@ Below, it is illustrated how to run the OpenFOAM simulation on TU Delft's DelftB
 
 Run from the project's root folder on your local machine:
 
-```
+~~~ 
 rsync -avx ./Solver  delftblue:~/Solver
 ssh <netid>@login.delftblue.tudelft.nl
-```
+~~~ 
 
 On the SSH environment:
 
-```
+~~~ 
 cd ~/my_openfoam_folder/Solver
 sbatch Allrun.sh
-```
+~~~ 
 
 To visualize the status of your request, use:
 
-```
+~~~ 
 squeue --account <netid>
-```
+~~~ 
 
 Subsequently, to print the evolution of the solution, one can use the command below to print the last 30 lines of the `./log.simpleFoam` file every 60 s:
 
 
-```
+~~~ 
 watch -n 60 tail -n 30 log.simpleFoam
-```
+~~~ 
 
 
 ## License and Citation
@@ -150,6 +146,8 @@ TU Delft hereby disclaims all copyright interest in the program “**Disk Actuat
 
 **© 2023, Flavio Martins**
 
+### Hot to cite
+
 This repository is the official implementation of the following paper.
 
 [Paper Title](https://doi.org/YYMM.NNNNN)
@@ -162,7 +160,9 @@ Bibtex code
 
 When referencing this code, please **cite the publication linked above**. 
 
-### Citation
+If you want to cite this repository (**in specific**) in your research paper, please use the following information:
+      
+Reference: [Making Your Code Citable](https://guides.github.com/activities/citable-code/) 
 
 <!--- Make the repository citable 
     * If you will be using the Zenodo-Github integration, add the following reference and the DOI of the Zenodo repository:
