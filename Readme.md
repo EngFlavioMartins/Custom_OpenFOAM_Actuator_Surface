@@ -1,5 +1,10 @@
 # Custom OpenFOAM Actuator Surface
 
+
+
+
+
+
 <p align="center">
 <img src="Resources/Render.png"  width="600px">
 </p>
@@ -162,7 +167,8 @@ When referencing this code, please **cite the publication linked above**.
 
 If you want to cite this repository (**in specific**) in your research paper, please use the following information:
       
-Reference: [Making Your Code Citable](https://guides.github.com/activities/citable-code/) 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.11562404.svg)](https://doi.org/10.5281/zenodo.11562404)
+
 
 <!--- Make the repository citable 
     * If you will be using the Zenodo-Github integration, add the following reference and the DOI of the Zenodo repository:
@@ -177,7 +183,7 @@ Reference: [Making Your Code Citable](https://guides.github.com/activities/citab
 -->
 
 
-## References
+## Bibligraphy
 
 For more information on how to run OpenFOAM application on DelftBlue, refer to:
 
