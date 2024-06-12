@@ -136,18 +136,6 @@ watch -n 60 tail -n 30 log.simpleFoam
 
 ## License and Citation
 
-### License
-
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)  
-
-The contents of this repository are licensed under a **Apache License 2.0** license.
-
-TU Delft hereby disclaims all copyright interest in the program “**Disk Actuator model in OpenFOAM**”, an OpenFOAM case file with custom disk-actuator solver meant for running at local machines or clusters, written by the Author(s).  
-
-**© 2023, Flavio Martins**
-
-### Hot to cite
-
 This repository is the official implementation of the following paper.
 
 [Paper Title](https://doi.org/YYMM.NNNNN)
@@ -162,7 +150,7 @@ When referencing this code, please **cite the publication linked above**.
 
 If you want to cite this repository (**in specific**) in your research paper, please use the following information:
       
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.11562404.svg)](https://doi.org/10.5281/zenodo.11562404)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.11615669.svg)](https://doi.org/10.5281/zenodo.11615669)
 
 
 <!--- Make the repository citable 
