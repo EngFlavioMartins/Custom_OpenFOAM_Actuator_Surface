@@ -1,10 +1,5 @@
 # Custom OpenFOAM Actuator Surface
 
-
-
-
-
-
 <p align="center">
 <img src="Resources/Render.png"  width="600px">
 </p>
@@ -107,7 +102,7 @@ to have all test cases run in sequence (batch run), or:
 to run one test case.
 
 
-## From TU Delft's DelftBlue computer
+### From TU Delft's DelftBlue computer
 
 Below, it is illustrated how to run the OpenFOAM simulation on TU Delft's DelftBlue supercomputer from the folder `~/my_openfoam_folder/`.
 
